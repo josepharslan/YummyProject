@@ -1,0 +1,108 @@
+﻿@model List<YummyProject.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    DateTime dt = DateTime.Now;
+    dt.AddDays(6);
+}
+
+<h2>Index</h2>
+
+<h1 class="mt-4">Dashboard</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Dashboard</li>
+</ol>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Burger Türü Sayısı</div>
+            <span class="card-body display-6">@ViewBag.burgerCount</span>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">Detaya Git</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Reverzasyon Sayısı</div>
+            @if (ViewBag.approvedBooks != 0)
+            {
+                <span class="card-body display-6">@ViewBag.approvedBooks</span>
+            }
+            else
+            {
+                <span class="card-body display-6">Aktif Rezervasyon Bulunmamaktadır.</span>
+            }
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">En Yakın Rezervasyon Tarihi</div>
+            @if (ViewBag.nearestBookingDate > DateTime.Now)
+            {
+                <span class="card-body display-6">@ViewBag.nearestBookingDate</span>
+            }
+            else
+            {
+                <span class="card-body display-6">Aktif Rezervasyon Bulunmamaktadır.</span>
+            }
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">En Ucuz Ürün</div>
+            <span class="card-body display-6">@ViewBag.cheapestPrice</span>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        DataTable Example
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Kategori</th>
+                    <th>Ad</th>
+                    <th>İçerik</th>
+                    <th>Fiyat</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Kategori</th>
+                    <th>Ad</th>
+                    <th>İçerik</th>
+                    <th>Fiyat</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Category.CategoryName</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Ingredients</td>
+                        <td>@item.Price ₺</td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>

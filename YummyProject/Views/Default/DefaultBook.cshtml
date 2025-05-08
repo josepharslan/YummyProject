@@ -1,0 +1,41 @@
+﻿@model YummyProject.Models.Booking
+
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+    <h2>Rezervasyon Yap</h2>
+    <p><span>Book Your</span> <span class="description-title">Stay With Us<br></span></p>
+</div><!-- End Section Title -->
+
+<div class="container">
+    <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-4 reservation-img" style="background-image: url('@Url.Content("~/Templates/yummy-red-1.0.0/assets/img/reservation.jpg")')"></div>
+
+        <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+            @using (Html.BeginForm("CreateBook", "Default", FormMethod.Post))
+            {
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Ad Soyad", required = "required" })
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "E-posta", type = "email", required = "required" })
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "Telefon", required = "required" })
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        @Html.TextBoxFor(x => x.BookingDate, new { @class = "form-control", type = "datetime-local", required = "required" })
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        @Html.TextBoxFor(x => x.PersonCount, new { @class = "form-control", type = "number", placeholder = "Kişi Sayısı", required = "required" })
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Rezervasyon Yap</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

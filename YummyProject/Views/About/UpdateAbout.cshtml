@@ -1,0 +1,46 @@
+﻿@model YummyProject.Models.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımda Bilgisi Güncelle</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.AboutId)
+    <label>Madde 1</label>
+    @Html.TextBoxFor(x => x.Item1, new { @class = "form-control" })
+    <br />
+    <label>Madde 2</label>
+    @Html.TextBoxFor(x => x.Item2, new { @class = "form-control" })
+    <br />
+    <label>Madde 3</label>
+    @Html.TextBoxFor(x => x.Item3, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 3, 1, new { @class = "form-control" })
+    <br />
+    <label>Video Url</label>
+    @Html.TextBoxFor(x => x.VideoUrl, new { @class = "form-control" })
+    <br />
+    <label>Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    <br />
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Url.Content(Model.ImageUrl)" width="150" alt="Resim 1" class="mb-2 float-right"/>
+    }
+    <br />
+    <label>Resim 1</label>
+    <input type="file" name="ImageFile" class="form-control" />
+    @if (!string.IsNullOrEmpty(Model.ImageUrl2))
+    {
+        <img src="@Url.Content(Model.ImageUrl2)" width="150" alt="Resim 2" class="mb-2" />
+    }
+    <br />
+    <label>Resim 2</label>
+    <input type="file" name="ImageFile2" class="form-control" />
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+
+

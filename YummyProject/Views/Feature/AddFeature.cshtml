@@ -1,0 +1,32 @@
+﻿@model YummyProject.Models.Feature
+@{
+    ViewBag.Title = "AddFeature";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Öne Çıkan Alan Ekleme Sayfası</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title, "Başlık Boş Bırakılamaz.", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label>Açıklama</label>
+        @Html.TextAreaFor(x => x.Description, 1, 4, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Description)
+    </div>
+    <div class="mb-3">
+        <label>Video Url</label>
+        @Html.TextBoxFor(x => x.VideoUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.VideoUrl)
+    </div>
+    <div class="mb-3">
+        <label>Resim Ekle</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        @Html.ValidationMessageFor(x => x.ImageUrl)
+    </div>
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

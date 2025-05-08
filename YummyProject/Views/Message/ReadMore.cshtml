@@ -1,0 +1,23 @@
+﻿@model YummyProject.Models.Message
+
+@{
+    ViewBag.Title = "ReadMore";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Mesaj Detayı</h2>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <strong>Konu: <i>@Model.Subject</i> </strong>
+    </div>
+    <div class="card-body">
+        <p><strong>Gönderen:</strong> @Model.Name</p>
+        <hr />
+        <p>@Model.MessageContent</p>
+    </div>
+    <div class="card-footer">
+        <a href="@Url.Action("Index", "Message")" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</div>

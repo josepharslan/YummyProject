@@ -1,0 +1,38 @@
+﻿@model List<YummyProject.Models.Message>
+
+@{
+    ViewBag.Title = "NotRead";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Okunmamış Mesajlar</h2>
+
+<table class="table table-bordered table-hover table-secondary">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Mail</th>
+            <th>Konu</th>
+            <th>Mesajın İçeriği</th>
+            <th>Durum</th>
+            <th>Devamını Oku</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.MessageContent</td>
+                <td>@item.IsRead</td>
+                <td><a class="btn btn-primary" href="/Message/ReadMore/@item.MessageId">Devamını Oku</a></td>
+                <td><a class="btn btn-danger" href="/Message/DeleteMessage/@item.MessageId">Sil</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

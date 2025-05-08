@@ -1,0 +1,30 @@
+﻿@model YummyProject.Models.SocialMedia
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sosyal Medya Ekle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SocialMediaId)
+
+    <div class="mb-3">
+        <label>Url</label>
+        @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        <label>İkon</label>
+        @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+
+

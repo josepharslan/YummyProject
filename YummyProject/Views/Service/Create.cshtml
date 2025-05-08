@@ -1,0 +1,30 @@
+﻿@model YummyProject.Models.Service
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Hizmet Ekle</h2>
+
+@using (Html.BeginForm("Create", "Service", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Açıklama</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 4 })
+    </div>
+
+    <div class="form-group">
+        <label>İkon</label>
+        @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+        <small class="form-text text-muted">Örn: <code>bi bi-star</code></small>
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+

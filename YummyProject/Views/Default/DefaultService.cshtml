@@ -1,0 +1,19 @@
+﻿@model List<YummyProject.Models.Service>
+
+<div class="col-lg-8 d-flex align-items-stretch">
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-xl-4">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                    <i class="@item.Icon"></i>
+                    <h4>@item.Title</h4>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

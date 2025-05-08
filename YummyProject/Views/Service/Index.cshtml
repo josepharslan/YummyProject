@@ -1,0 +1,39 @@
+﻿@model List<YummyProject.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h2>Hizmet Listesi</h2>
+
+<table class="table table-bordered table-hover table-secondary">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>İkon</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Icon</td>
+                <td>
+                    <a href="/Service/Update/@item.ServiceId" class="btn btn-warning">Güncelle</a>
+                    <a href="/Service/Delete/@item.ServiceId" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Service/Create" class="btn btn-primary">Yeni Hizmet Ekle</a>

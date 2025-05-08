@@ -1,0 +1,26 @@
+﻿@model YummyProject.Models.ChefSocial
+@{
+    ViewBag.Title = "AddChefSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Şef Sosyal Medya Ekleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.ChefId)
+    @Html.HiddenFor(x => x.ChefSocialId)
+    <label>Sosyal Medya Adı</label>
+    @Html.TextBoxFor(x => x.SocialMediaName, new { @class = "form-control" })
+    <br />
+
+    <label>Sosyal Medya İkonu </label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+    <label>Sosyal Medya URL</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Kaydet</button>
+</form>

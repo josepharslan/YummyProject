@@ -1,0 +1,33 @@
+﻿@model YummyProject.Models.ContactInfo
+@{
+    ViewBag.Title = "AddContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İletişim Bilgisi Ekle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ContactInfoId)
+    <div class="mb-3">
+        <label>Adres</label>
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Telefon Numarası</label>
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Açık Saatler</label>
+        @Html.TextBoxFor(x => x.OpenHours, new { @class = "form-control", @placeholder = "00:00-00:00" })
+    </div>
+    <div class="mb-3">
+        <label>Harita Url</label>
+        @Html.TextBoxFor(x => x.MapUrl, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

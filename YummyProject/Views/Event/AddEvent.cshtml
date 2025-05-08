@@ -1,0 +1,28 @@
+﻿@model YummyProject.Models.Event
+@{
+    ViewBag.Title = "AddEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>AddEvent</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        @Html.HiddenFor(x => x.EventId)
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Açıklama</label>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Ücret</label>
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label>Resim</label>
+        <input type="file" value="ImageFile" name="ImageFile" class="form-control" />
+    </div>
+    <button class="btn btn-success">Kaydet</button>
+</form>

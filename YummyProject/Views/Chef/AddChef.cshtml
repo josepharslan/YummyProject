@@ -1,0 +1,24 @@
+﻿@model YummyProject.Models.Chef
+@{
+    ViewBag.Title = "AddChef";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Şef Ekleme Sayfası</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.ChefId)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>Ünvan</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 3, 1, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf</label>
+    <input type="file" name="ImageFile" class="form-control" required />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

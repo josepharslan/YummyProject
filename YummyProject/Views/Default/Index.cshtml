@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<!-- Feature Section -->
+@Html.Action("DefaultFeature")
+<!-- /Hero Section -->
+<!-- About Section -->
+@Html.Action("DefaultAbout")<!-- /About Section -->
+<!-- Service Section -->
+<section id="why-us" class="why-us section light-background">
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-box">
+                    <h3>Neden Yummy To Go?</h3>
+                    <p>
+                        Yummy’nin ürün kalitesi ve lezzet anlayışını pratik bir şekilde sunan “Fast Good” konsepti.
+                    </p>
+                    <div class="text-center">
+                        <a href="#" class="more-btn"><span>Daha fazlası</span> <i class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div><!-- End Why Box -->
+
+            @Html.Action("DefaultService")
+
+        </div>
+
+    </div>
+
+</section><!-- /Why Us Section -->
+<!-- Stats Section -->
+@Html.Action("DefaultStats","Default")
+<!-- /Stats Section -->
+<!-- Product Section -->
+@Html.Action("DefaultProduct")
+<!-- /Menu Section -->
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Referanslar</h2>
+        <p>Hakkımızda neler <span class="description-title">söylediler?</span></p>
+    </div><!-- End Section Title -->
+    @Html.Action("DefaultTestimonial", "Default")
+
+    
+
+</section><!-- /Testimonials Section -->
+<!-- Events Section -->
+<section id="events" class="events section">
+    @Html.Action("DefaultEvents", "Default")
+
+</section><!-- /Events Section -->
+<!-- Chefs Section -->
+<section id="chefs" class="chefs section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>chefs</h2>
+        <p><span>Our</span> <span class="description-title">Proffesional Chefs<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        @Html.Action("DefaultChef", "Default")
+    </div>
+
+</section><!-- /Chefs Section -->
+<!-- Booking Section -->
+<section id="book-a-table" class="book-a-table section">
+
+    @Html.Action("DefaultBook", "Default")
+</section>
+
+<!-- /Book A Table Section -->
+<!-- Photo Gallery Section -->
+@Html.Action("DefaultGallery", "Default")
+<!-- /Gallery Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>İletişim</h2>
+        <p><span></span> <span class="description-title">Bize Ulaşın</span></p>
+    </div><!-- End Section Title -->
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        @Html.Action("DefaultContact", "Default")
+
+        @Html.Action("SendMessage", "Default")
+
+    </div>
+
+</section><!-- /Contact Section -->

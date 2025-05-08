@@ -1,0 +1,16 @@
+﻿@model YummyProject.Models.Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.CategoryId)
+    <div class="mb-3">
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-success">Kategori Ekle</button>
+</form>

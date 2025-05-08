@@ -1,0 +1,52 @@
+﻿@model YummyProject.Models.Testimonial
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Referans Güncelle</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.TestimonialId)
+
+    <div class="mb-3">
+        <label>Ad Soyad</label>
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control", placeholder = "Ad Soyad girin" })
+    </div>
+
+    <div class="mb-3">
+        <label>Unvan</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Unvan girin (örn: CEO)" })
+    </div>
+
+    <div class="mb-3">
+        <label>Yorum</label>
+        @Html.TextAreaFor(x => x.Comment, 3, 50, new { @class = "form-control", placeholder = "Yorum yazın" })
+    </div>
+
+    <div class="mb-3">
+        <label>Puan (1–5)</label>
+        @Html.TextBoxFor(x => x.Rating, new { @class = "form-control", type = "number", min = "1", max = "5" })
+    </div>
+
+    <div class="mb-3">
+        <label>Mevcut Resim</label><br />
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Url.Content(Model.ImageUrl)" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;" alt="Profil" />
+        }
+        else
+        {
+            <span class="text-muted">Kayıtlı resim yok</span>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label>Yeni Resim Yükle</label>
+        <input type="file" name="ImageFile" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+</form>
+

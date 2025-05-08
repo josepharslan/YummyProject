@@ -1,0 +1,30 @@
+﻿
+@model YummyProject.Models.Message
+
+@using (Html.BeginForm("SendMessage", "Default", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row gy-4 mt-4">
+
+        <div class="col-md-6">
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Ad Soyad", required = "required" })
+        </div>
+
+        <div class="col-md-6">
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Mail Adresi", type = "email", required = "required" })
+        </div>
+
+        <div class="col-md-12">
+            @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu", required = "required" })
+        </div>
+
+        <div class="col-md-12">
+            @Html.TextAreaFor(x => x.MessageContent, 6, 40, new { @class = "form-control", placeholder = "Mesajınızı giriniz.", required = "required" })
+        </div>
+
+        <div class="col-md-12 text-center mt-3">
+            <button type="submit" class="btn btn-primary">Gönder</button>
+        </div>
+    </div>
+}
