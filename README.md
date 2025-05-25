@@ -16,6 +16,6 @@ YummyProject, bir restoran ve yemek hizmetleri yönetim sistemidir. Bu ASP.NET M
 ## 📸 Proje Görselleri
 
 ![Ana Sayfa](https://github.com/user-attachments/assets/f3ac11c3-5e6c-4c84-9a3b-64dc1a8eb07a)
-![Menü Yönetimi](https://github.com/user-attachments/assets/f91aec3d-7ba4-44e7-9ecd-d5d899c2ce15)
+![Menü Yönetimi](https://github.com/user-attachments/assets/f9941e2e-c7a8-4961-bd25-1029e164de5c)
 
 ---
